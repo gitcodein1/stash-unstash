@@ -7,6 +7,7 @@ pipeline {
       }
       steps {
         sh 'sh script.sh | xargs -I {} sh script.sh {} > result.txt'
+        sh 'ls -l'
         sh 'cat result.txt'
       }
     }
@@ -15,6 +16,7 @@ pipeline {
         label 'docker-node2'
       }
       steps {
+        sh 'ls -l'
         sh 'cat result.txt'
       }
     }
