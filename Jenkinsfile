@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage("STAGE1") {
       agent {
-        label 'docker-node'
+        label 'docker-node1'
       }
       steps {
         sh 'sh script.sh | xargs -I {} sh script.sh {} > result.txt'
@@ -12,7 +12,7 @@ pipeline {
     }
     stage("STAGE2") {
       agent {
-        label 'docker-node'
+        label 'docker-node2'
       }
       steps {
         sh 'cat result.txt'
