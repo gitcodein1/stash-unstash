@@ -6,7 +6,7 @@ pipeline {
         label 'docker-node1'
       }
       steps {
-        sh 'sh script.sh 100 200 | xargs -I {} sh script.sh {} > result.txt'
+        sh 'sh script.sh 100 200 | xargs -I {} sh output.sh {} > result.txt'
         sh 'ls -l'
         sh 'cat result.txt'
       }
