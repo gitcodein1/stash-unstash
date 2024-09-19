@@ -17,6 +17,7 @@ pipeline {
         label 'docker-node2'
       }
       steps {
+        sh 'ls -l'
         unstash 'stage1-stash'
         sh 'ls -l'
         sh 'cat result.txt'
