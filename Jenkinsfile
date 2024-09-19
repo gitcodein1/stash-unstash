@@ -18,8 +18,10 @@ pipeline {
       }
       steps {
         sh 'ls -l'
+        sh 'git status'
         unstash 'stage1-stash'
         sh 'ls -l'
+        sh 'git status'
         sh 'cat result.txt'
       }
     }
